@@ -3,6 +3,7 @@ def num_grid(lst):
         for j in range(0, 5):
             if lst[i][j] == '-':
                 lst[i][j] = 0
+
     for i in range(0, 5):
         for j in range(0, 5):
             if lst[i][j] == '#':
@@ -14,6 +15,11 @@ def num_grid(lst):
                 if i > 0 and j < 4 and isinstance(lst[i-1][j+1],int): lst[i-1][j+1] += 1
                 if i < 4 and j > 0 and isinstance(lst[i+1][j-1],int): lst[i+1][j-1] += 1
                 if i < 4 and j < 4 and isinstance(lst[i+1][j+1],int): lst[i+1][j+1] += 1
+
+    for i in range(0, 5):
+        for j in range(0, 5):
+            if isinstance(lst[i][j],int):
+                lst[i][j] = str(lst[i][j])
 
     return lst
 
